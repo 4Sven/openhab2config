@@ -1,0 +1,18 @@
+Strategies {
+	everyMin  : "0 * * * * ?"
+	everyHour : "0 0 * * * ?"
+	everyDay  : "0 0 0 * * ?"
+	every10   : "0 0,10,20,30,40,50 * * * ?"
+	default   = everyChange
+}
+
+Items {
+	//* : strategy = everyChange, everyDay
+	Weather* : strategy = everyMin
+	Temperature* : strategy = everyMin, restoreOnStartup
+	Windows* : strategy = everyMin
+	Heatings* : strategy = everyMin
+	HeatingMode* : strategy = everyMin, restoreOnStartup
+	Lights* : strategy = everyChange, restoreOnStartup
+	Shutters* : strategy = everyChange, restoreOnStartup
+}

@@ -1,0 +1,14 @@
+Strategies {
+	everyHour : "0 0 * * * ?"
+	everyDay  : "0 0 0 * * ?"
+	every10   : "0 0,10,20,30,40,50 * * * ?"
+	default   = everyChange
+}
+
+Items {
+	//* : strategy = everyChange, everyDay
+	//Weather : strategy = every10
+	//Temperature* : strategy = every10
+	//Window* : strategy = everyChange
+	//heating : strategy = everyChange
+}

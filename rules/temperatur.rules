@@ -1,0 +1,30 @@
+rule "Info to open or close windows"
+when
+	Item Temperature_FF_Office changed
+then
+	var int office_temp = (Temperature_FF_Office.state as DecimalType).intValue
+	var int outside_temp = (WeatherTemp_Outside.state as DecimalType).intValue
+	if (office_temp > outside_temp) {
+		sendCommand(OutsideColder, ON)
+	} else {
+		sendCommand(OutsideColder, OFF)
+	}
+end
+
+rule "Inform if outside colder"
+when
+	Item OutsideColder changed to ON
+then
+	if(Season_Name.state=="Summer") {
+		sendTelegram("bot1", "Du kannst jetzt im Arbeitszimmer lüften!")
+	}
+end
+
+rule "Inform if outside warmer"
+when
+	Item OutsideColder changed to OFF
+then
+	if (Season_Name.state=="Summer") {
+		sendTelegram("bot1", "Du kannst die Fenster schliessen. Im Haus ist es kälter als draussen!")
+	}
+end

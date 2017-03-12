@@ -1,0 +1,184 @@
+Group All Group gGF (All) 
+
+Group gFF (All) 
+Group gC (All) 
+Group Outdoor (All) 
+Group Shutters (All) 
+Group Weather (All) 
+Group Status (All)
+
+Group GF_Living         "Wohnzimmer"            <sofa>         (gGF)
+Group GF_Kitchen        "Küche"                 <kitchen>       (gGF)
+Group GF_Hobby          "Hobby"                 <smiley>        (gGF)
+Group GF_Hwr            "Wirtschaftsraum"       <smartheater>   (gGF)
+Group GF_Toilet         "Toilette"              <bath>          (gGF)
+Group Corridor          "Flur"                  <corridor>      (gGF)
+Group GF_Eating			"Esszimmer"				<none> (gGF)
+
+Group FF_Bath           "Bad"                   <bath>          (gFF)
+Group FF_Office         "Büro"             		<office>        (gFF)
+Group FF_Wardrobe       "Ankleide"              <wardrobe>      (gFF)
+Group FF_Bed            "Schlafzimmer"          <bedroom>       (gFF)
+Group FF_Corridor       "Flur"                  <corridor>      (gFF)
+
+/* active groups */
+Group:Number:AVG                Temperature     "Temperatur [%.1f °C]"     <temperature>   (Status)
+Group:Contact:OR(OPEN, CLOSED)  Windows         "offene Fenster [(%d)]"    <contact>       (Status)
+Group:Switch:OR(ON, OFF)        Heatings        "aktive Heizkreise [(%d)]" <heating>       (Status)
+
+/* Sockets */
+Switch Socket_Outside_House		"Steckdosen am Haus"	<socket>		(Outdoor) {knx="7/2/0+12/2/0"}
+Switch Socket_Hwr				"Zirkulationspumpe"		<socket>		(GF_Hwr) {knx="7/0/2+12/0/2"}
+
+Switch Socket_GF_Living			"TV Ecke"				<socket>		(GF_Living) {knx="7/0/1+12/0/1"}
+Switch Socket_floor_room		"Harry Potter"			<socket>		(Corridor) {knx="7/0/3+12/0/3"}
+Switch Socket_floor				"Flur"					<socket>		(Corridor) {knx="7/0/4+12/0/4"}
+Switch Socket_Living			"Couch (Ecke)"			<socket>		(GF_Living) {knx="7/0/5+12/0/5"}
+Switch Socket_Kitchen			"Deckenlüfter"			<socket>		(GF_Kitchen) {knx="7/0/0"}
+
+Switch Socket_bath				"Bad"					<socket>		(FF_Bath) {knx="7/1/0+<12/1/0"}
+Switch Socket_sidebed			"Nachttisch"			<socket>		(FF_Bed) {knx="7/1/2+<12/1/2"}
+Switch Socket_bedroomlight		"Stehlampe"				<socket>		(FF_Bed) {knx="7/1/4+<12/1/4"}
+Switch Socket_bedlight			"Bett Sockellicht"		<socket>		(FF_Bed) {knx="7/1/6+<12/1/6"}
+Switch Socket_mehrzweck			"Mehrzweck"				<socket>		(FF_Office) {knx="7/1/8+<12/1/8"}
+Switch Socket_wardrobe			"Ankleide"				<socket>		(FF_Wardrobe) {knx="7/1/10+<12/1/10"}
+Switch Socket_officeligt		"Tischlampe"			<socket>		(FF_Office) {knx="7/1/12+<12/1/12"}
+Switch Socket_officeiland		"Lichtinsel"			<socket>		(FF_Office) {knx="7/1/14+<12/1/14"}
+
+
+/* Lights */
+Switch Light_any						"Alle Lichter"			(Lights) {knx="5/3/0"}
+
+Switch Light_Outdoor_Terasse			"Terasse"				(Outdoor, Lights) {knx="1/3/0+9/3/0"}
+Dimmer Ligth_GF_KitchenCeiling			"Decke"					(GF_Kitchen, Lights) {knx="1/0/10, 10/0/10, 11/0/10"}
+Switch Light_GF_KitchenSpots			"Kochfläche Spots"		(GF_Kitchen, Lights) {knx="1/0/16+9/0/16"}
+Dimmer Light_GF_EatingCeil				"Decke"					(GF_Eating, Lights) {knx="1/0/3, 10/0/3, 11/0/3"}
+Dimmer Ligth_GF_EatingSpots				"Deckenspots"			(GF_Eating, Lights) {knx="1/0/22, 10/0/22, 11/0/22"}
+Switch Ligth_GF_EatingGround			"Sockellicht"			(GF_Living, Lights) {knx="1/0/14+9/0/14"}
+Switch Light_GF_KitchenGround			"Sockellicht"			(GF_Kitchen, Lights) {knx="1/0/0+9/0/0"}
+Switch Light_GF_Corridor_Pic			"Treppe Bild"			(Corridor, Lights) {knx="1/1/29"}
+Switch Light_GF_Corridor_Down			"Indirekt Boden Flur"	(Corridor, Lights) {knx="1/0/29+9/0/29"}
+Switch Light_GF_Corridor_Upstairs		"Indirekt Treppe"		(Corridor, Lights) {knx="1/1/31+9/1/31"}
+Dimmer Light_GF_Corridor_Side			"Lichtschächte"			(Corridor, Lights) {knx="1/1/27, 10/1/27, 11/1/27"}
+Switch Light_FF_Corridor_Up				"Deckenspots Flur"		(Corridor, Lights) {knx="1/1/20+9/1/20"}
+Dimmer Light_GF_Living_Ceiling			"Decke"					(Lights) {knx="1/0/2, 10/0/2, 11/0/2"}
+Switch Light_GF_Living_Spots			"Spots"					(Lights) {knx="1/0/12+9/0/12"}
+Dimmer Light_GF_Living_Down				"Bodenspots"			(Lights) {knx="1/0/25, 10/0/25, 11/0/25"}
+Dimmer Light_GF_Eating_Down				"Bodenspots"			(Lights) {knx="1/0/27, 10/0/27, 11/0/27"}
+Switch Light_GF_Kamin					"Kamin"					(Lights) {knx="1/0/24+9/0/24"}
+Switch Light_GF_Hwr						"Deckenlicht"			(Lights) {knx="1/0/4+9/0/4"}
+Switch Light_GF_Toilet					"Gäste WC"				(Lights) {knx="1/0/8+9/0/8"}
+Switch Light_GF_Hobby					"Hobbyraum"				(Lights) {knx="1/0/6+9/0/6"}
+
+Dimmer Light_FF_Office_Ceiling          "Decke"                 (FF_Office, Lights) {knx="1/1/4, 10/1/4, 11/1/4"}
+Switch Light_FF_Office_Schrank          "Schrank"               (FF_Office, Lights) {knx="1/1/22+9/1/22"}
+Switch Light_FF_Office_Ceiling2			"Decke2"				(FF_Office, Lights) {knx="1/1/7+9/1/7"}
+Dimmer Light_FF_Corridor_Pic			"Büro Bild"				(Corridor, Lights) {knx="<1/1/18, 10/1/18, 11/1/18"}
+Dimmer Light_FF_Bed						"Zimmerlicht"			(FF_Bed, Ligths) {knx="1/1/2, 10/1/2, 11/1/2"}
+Switch Light_FF_Bath_Wanne				"Badewanne"				(FF_Bath, Lights) {knx="1/1/6+9/1/6"}
+Dimmer Light_FF_Bath_Wand				"Bodenspots"			(FF_Bath, Lights) {knx="1/1/26, 10/1/26, 11/1/26"}
+Switch Light_FF_Bath_Mirror				"Spiegel"				(FF_Bath, Lights) {knx="1/1/8+9/1/8"}
+Switch Light_FF_Bath_wasch				"Waschbecken"			(FF_Bath, Lights) {knx="1/1/10+9/1/10"}
+Dimmer Light_FF_Bath_shower				"Dusche"				(FF_Bath, Lights) {knx="1/1/12, 10/1/12, 11/1/12"}
+Switch Light_FF_Wardrobe				"Ankleide"				(FF_Bed, Lights) {knx="1/1/24+9/1/24"}
+Dimmer Light_FF_Mehrzweck_Ceil			"Mehrzweckzimmer"		(FF_MZR, Lights) {knx="1/1/14, 10/1/14, 11/1/14"}
+Dimmer Light_FF_Mehrzweck_Regal			"Mehrzweck Regal"		(FF_MZR, Lights) {knx="1/1/16, 10/1/16, 11/1/16"}
+
+/* Special */
+Switch Present							"Anwesenheit"			(Present, gInitializeOff) {knx="5/5/0"}
+Switch OutsideColder					"Außen kälter"			(gInitializeOff)
+Switch SunBackwards						"Sonne hinten"
+Switch SunEating						"Sonne Esszimmer"
+Switch SunBuero							"Sonne Büro"
+
+/* Heating */
+Switch Heating_GF_Living		"Wohnzimmer"	<heating>		(GF_Living, Heatings) {knx="5/4/0"}
+Switch Heating_GF_Hwr			"HWR"			<heating>		(GF_Hwr, Heatings) {knx="0/0/1"}
+Switch Heating_GF_Toilet		"WC"			<heating>		(GF_Toilet, Heatings) {knx="0/0/7"}
+Switch Heating_GF_Hobby			"Hobbyraum"		<heating>		(GF_Hobby, Heatings) {knx="0/0/31"}
+
+Switch Heating_FF_Office        "Büro Heizung"  <heating>  		(FF_Office, Heatings) {knx="0/1/0"}
+Switch Heating_FF_Bath			"Bad"			<heating>		(FF_Bath, Heatings) {knx="0/1/6"}
+Switch Heating_FF_BathH			"Heizkörper"	<heating>		(FF_Bath, Heatings) {knx="0/1/19"}
+Switch Heating_FF_Bed			"Schlafzimmer"	<heating>		(FF_Bed, Heatings) {knx="0/1/13"}
+
+
+/* Rollershutters */
+Rollershutter	Shutter_GF_Living			"Wohnzimmer"	(Shutters) {knx="2/0/6, 2/0/7"}
+Rollershutter	Shutter_GF_EatingGarden		"Esszimmer"		(Shutters) {knx="2/0/8, 2/0/9"}
+Rollershutter	Shutter_GF_EatingNeigh		"Esszimmer (Seite)"	(Shutters) {knx="2/0/10, 2/0/11"}
+Rollershutter	Shutter_GF_Kitchen			"Küche"			(Shutters) {knx="2/0/12, 2/0/13"}
+Rollershutter	Shutter_GF_Hobby			"Hobby"			(Shutters) {knx="2/0/4, 2/0/5"}
+Rollershutter	Shutter_GF_Hwr				"Wirtschaftsraum" (Shutters) {knx="2/0/0, 2/0/1"}
+Rollershutter	Shutter_GF_Toilet			"WC"			(Shutters) {knx="2/0/2, 2/0/3"}
+
+Rollershutter   Shutter_FF_OfficeSmall          "Büro klein"    (FF_Office, Shutters)   {knx="2/1/2, 2/1/3"}
+Rollershutter   Shutter_FF_OfficeLarge          "Büro groß"     (FF_Office, Shutters)   {knx="2/1/4, 2/1/5"}
+Rollershutter	Shutter_FF_BiblioLarge			"Lesezimmer klein" (Shutters) {knx="2/1/8, 2/1/9"}
+Rollershutter	Shutter_FF_BiblioSmall			"Lesezimmer groß" (Shutters) {knx="2/1/6, 2/1/7"}
+Rollershutter	Shutter_FF_Bath					"Bad"			(FF_Bath, Shutters) {knx="2/1/0, 2/1/1"}
+Rollershutter	Shutter_FF_Wardrobe				"Ankleide"		(FF_Wardrobe, Shutters) {knx="2/1/10, 2/1/11"}
+Rollershutter	Shutter_FF_Bed_Small			"Schlafzimmer klein" (FF_Bed_Small, Shutters) {knx="2/1/12, 2/1/13"}
+Rollershutter	Shutter_FF_Bed_Big				"Schlafzimmer groß" (FF_Bed_Big, Shutters) {knx="2/1/14, 2/1/15"}
+
+/* Helligkeit */
+Number Lightness_GF_Hwr			"HWR [%.0f lux]"					<lightness> (GF_Hwr) {knx="1/5/3"}
+Number Lightness_GF_Corridor	"Flur unten [%.0f lux]"				<lightness> (Corridor) {knx="1/5/1"}
+Number Lightness_GF_Toilet		"Toilette [%.0f lux]"				<lightness> (GF_Toilet) {knx="1/5/2"}
+
+Number Lightness_FF_Bath		"Bad [%0.f lux]"					<lightness> (FF_Bath) {knx="1/5/0"}
+
+/* Indoor Temperatures */
+Number Temperature_FF_Office    "Arbeitszimmer [%.1f &deg;C]"       <temperature>   (FF_Office, Temperature, gInitializeZero) { knx = "0/1/1" }
+Number Temperature_FF_Bath      "Bad [%.1f &deg;C]"                 <temperature>   (FF_Bath, Temperature, gInitializeZero)   { knx = "0/1/7" }
+Number Temperature_FF_Bed       "Schlafzimmer [%.1f &deg;C]"        <temperature>   (FF_Bed, Temperature, gInitializeZero)    { knx = "0/1/14" }
+
+Number Temperature_GF_Living    "Wohnbereich [%.1f &deg;C]"         <temperature>   (GF_Living, Temperature, gInitializeZero)    { knx = "0/0/16" }
+Number Temperature_GF_Hwr       "Wirtschaftsraum [%.1f &deg;C]"     <temperature>   (GF_Hwr, Temperature, gInitializeZero)       { knx = "0/0/4" }
+Number Temperature_GF_Bath      "WC [%.1f &deg;C]"                  <temperature>   (GF_Toilet, Temperature, gInitializeZero)    { knx = "0/0/9" }
+Number Temperature_GF_Kitchen   "K&uuml;che [%.1f &deg;C]"          <temperature>   (GF_Kitchen, Temperature, gInitializeZero)    { knx = "0/0/19" }
+Number Temperature_GF_Hobby     "Hobby [%.1f &deg;C]"               <temperature>   (GF_Hobby, Temperature, gInitializeZero)     { knx = "0/0/32" }
+
+/* Windows */
+Contact Window_FF_OfficeSmall   "Office klein [MAP(de.map):%s]"         (FF_Office, Windows, gInitializeClosed) {knx="<8/1/0"}
+Contact Window_FF_OfficeLarge   "Office [MAP(de.map):%s]"          		(FF_Office, Windows, gInitializeClosed) {knx="<8/1/1"}
+Contact Window_FF_OpenSpaceG    "Mehrzweck [MAP(de.map):%s]"     		(FF_Office, Windows, gInitializeClosed) {knx="<8/1/2"}
+Contact Window_FF_OpenSpaceS    "Mehrzweck Seite [MAP(de.map):%s]"      (FF_Office, Windows, gInitializeClosed) {knx="<8/1/3"}
+Contact Window_FF_Wardrobe      "Ankleide [MAP(de.map):%s]"             (FF_Wardrobe, Windows, gInitializeClosed) {knx="<8/1/4"}
+Contact Window_FF_BedSmall  	"Schlafzimmer klein [MAP(de.map):%s]"   (FF_Bed, Windows, gInitializeClosed) {knx="<8/1/5"}
+Contact Window_FF_BedLarge   	"Schlafzimmer [MAP(de.map):%s]"         (FF_Bed, Windows, gInitializeClosed) {knx="<8/1/6"}
+Contact Window_FF_Bath   		"Bad [MAP(de.map):%s]"                  (FF_Bath, Windows, gInitializeClosed) {knx="<8/1/7"}
+
+Contact Window_GF_Kitchen   	"Küche [MAP(de.map):%s]"          		(GF_Kitchen, Windows, gInitializeClosed) {knx="<8/0/0"}
+Contact Window_GF_Hobby   		"Hobby [MAP(de.map):%s]"          		(GF_Hobby, Windows, gInitializeClosed) {knx="<8/0/1"}
+Contact Window_GF_HWR   		"Wirtschaftsraum [MAP(de.map):%s]"      (GF_HWR, Windows, gInitializeClosed) {knx="<8/0/2"}
+Contact Window_GF_Toilet   		"Gäste WC [MAP(de.map):%s]"          	(GF_Toilet, Windows, gInitializeClosed) {knx="<8/0/3"}
+Contact Window_GF_Living1   	"Wohnzimmer [MAP(de.map):%s]"          	(GF_Living, Windows, gInitializeClosed) {knx="<8/0/4"}
+Contact Window_GF_FoodGarden   	"Esszimmer hinten [MAP(de.map):%s]"     (GF_Living, Windows, gInitializeClosed) {knx="<8/0/5"}
+Contact Window_GF_FoodSide   	"Esszimmer seite [MAP(de.map):%s]"      (GF_Living, Windows, gInitializeClosed) {knx="<8/0/6"}
+
+/* Weather */
+Number  WeatherTemp_Outside        "Au&szlig;entemperatur [%.1f &deg;C]"     	(Weather) {knx="<6/1/0"}
+Number  WeatherWind_Outside        "Windgeschwindigkeit [%.1f m/s]"            (Weather) {knx="<6/1/1"}
+Number  WeatherLight_Right         "Helligkeit rechts [%.0f lux]"              (Weather) {knx="<6/1/2"}
+Number  WeatherLight_Middle        "Helligkeit mitte [%.0f lux]"               (Weather) {knx="<6/1/3"}
+Number  WeatherLight_Left          "Helligkeit links [%.0f lux]"               (Weather) {knx="<6/1/4"}
+Number  WeatherLight_low           "D&auml;mmerung [%.0f lux]"                 (Weather) {knx="<6/1/5"}
+Contact WeatherRain                "Regen [MAP(rain.map):%s]"                  (Weather) {knx="<6/1/6"}
+
+/* Scenes */
+Number  SceneShutterBedroom     "Schlafzimmer"		{knx="17.001:4/1/0"}
+
+/* Heating Select Mode */
+Number SelectHWR					"Wirtschaftsraum"	(HeatingMode)	{knx="0/0/5"}
+Number SelectHobby					"Hobbyraum"			(HeatingMode)	{knx="0/0/36"}
+Number SelectWC						"WC"				(HeatingMode)	{knx="0/0/12"}
+Number SelectLiving					"Wohnbereich"		(HeatingMode)	{knx="0/0/18"}
+
+Number SelectOffice					"Büro"				(HeatingMode)	{knx="0/1/4"}
+Number SelectBath					"Bad"				(HeatingMode)	{knx="0/1/10"}
+Number SelectBed					"Schlafzimmer"		(HeatingMode)	{knx="0/1/17"}
+
+/* additional functions in openHAB */
+Switch	allShutters					"Rollläden"									{autoupdate="false"}
+String  nightfall					"Tageszeit [%s]"

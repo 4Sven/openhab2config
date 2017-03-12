@@ -1,0 +1,43 @@
+rule "Initialize all items"
+when
+	System started
+then
+	logInfo(	"Initializer", "Started Timer ...")
+	sendTelegram("bot1", "OpenHAB Server wird gestartet!")
+	
+	//Wir warten x Sekunden, dann initalisieren wir alle die nicht aus der Datenbank befüllt wurden
+	createTimer(now.plusSeconds(60)) [|
+		
+		logInfo(	"Initializer", "... initializing!")
+		
+		// folgendes funktioniert nicht!
+		//Null
+		//gInitializeZero.members.filter( x | x.state == Uninitialized || x.state == Undefined).forEach[ item |
+		//	item.postUpdate( item, 0)
+		//]
+		
+		//On/Off für Schalter
+		//gInitializeOn.allMembers.filter( x | x.state == Uninitialized || x.state == Undefined).forEach[ item |
+		//	item.postUpdate( ON)
+		//]
+		//gInitializeOff.allMembers.filter( x | x.state == Uninitialized || x.state == Undefined).forEach[ item |
+		//	item.postUpdate( OFF)
+		//]
+		
+		//Open/Closed für Schalter
+		//gInitializeOpen.allMembers.filter( x | x.state == Uninitialized || x.state == Undefined).forEach[ item |
+		//	item.postUpdate( Open)
+		//]
+		//gInitializeClosed.allMembers.filter( x | x.state == Uninitialized || x.state == Undefined).forEach[ item |
+		//	item.postUpdate( Closed)
+		//]
+		
+	]
+end
+
+rule "ToDo if System goes down"
+when
+	System shuts down
+then
+	sendTelegram("bot1", "OpenHAB Server wird gestoppt!")
+end

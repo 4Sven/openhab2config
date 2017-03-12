@@ -1,0 +1,328 @@
+sitemap default label="Hauptmenü"
+{
+  Frame label="Comfort" {
+  	Switch item=Light_any icon="house-off" mappings=[OFF="AUS"]
+    Group item=Windows
+    Switch item=allShutters label="alle Rollläden" icon="rollershutter" mappings=[ON="auf",OFF="ab"]
+    Switch item=Present label="Anwesenheit" icon="present" mappings=[ON="ja", OFF="nein"]
+  }
+  Frame label="Bereiche" {
+    Group item=gGF label="Erdgeschoss" icon="groundfloor" {
+    	Group item=GF_Hwr {
+    		Frame label="Licht" {
+    			Switch item=Light_GF_Hwr
+    		}
+    		Frame label="Steckdosen" {
+    			Text item=Socket_Hwr
+    		}
+    		Frame label="Rollladen" {
+    			Switch item=Shutter_GF_Hwr
+    		}
+    		Frame label="Heizung" {
+    			Text item=Temperature_GF_Hwr
+    			Switch item=Heating_GF_Hwr
+    			Selection item=SelectHWR mappings=[4="Frost",1="Komfort",3="Nacht",2="Standby"]
+    		}
+    		Frame label="Fenster" {
+    			Text item=Window_GF_HWR
+    		}
+    	}
+    	Group item=GF_Hobby {
+    		Frame label="Licht" {
+    			Switch item=Light_GF_Hobby
+    		}
+    		Frame label="Rollladen" {
+    			Switch item=Shutter_GF_Hobby
+    		}
+    		Frame label="Heizung" {
+    			Text item=Temperature_GF_Hobby
+    			Text item=Heating_GF_Hobby
+    			Selection item=SelectHobby mappings=[4="Frost",1="Komfort",3="Nacht",2="Standby"]
+    		}
+    		Frame label="Fenster" {
+    			Text item=Window_GF_Hobby
+    		}
+    	}
+    	Group item=GF_Kitchen label="Küche" icon="kitchen" {
+    		Frame label="Licht" {
+    			Switch item=Ligth_GF_KitchenCeiling
+    			Switch item=Light_GF_KitchenSpots
+    			Switch item=Light_GF_KitchenGround
+    		}
+    		Frame label="Steckdosen" {
+    			Text item=Socket_Kitchen
+    		}
+    		Frame label="Rollladen" {
+    			Switch item=Shutter_GF_Kitchen
+    		}
+    		Frame label="Heizung" {
+    			Text item=Heating_GF_Living
+    		}
+    		Frame label="Fenster" {
+    			Text item=Window_GF_Kitchen
+    		}
+    	}
+    	Group item=GF_Living {
+    		Frame label="Licht" {
+    			Switch item=Light_GF_Living_Ceiling
+    			Switch item=Light_GF_Living_Spots
+    			Switch item=Light_GF_Kamin
+    		}
+    		Frame label="Steckdosen" {
+    			Switch item=Socket_GF_Living
+    			Switch item=Socket_Living
+			}
+			Frame label="Mediacenter" {
+				Text item=xbmc_living_systemstate
+				Text item=xbmc_living_playerstate
+				Text item=xbmc_living_title
+				Text item=xbmc_living_type
+			}
+			Frame label="Rollladen" {
+				Switch item=Shutter_GF_Living
+				Switch item=Shutter_GF_EatingGarden
+				Switch item=Shutter_GF_EatingNeigh
+			}
+    		Frame label="Heizung" {
+				Text item=Temperature_GF_Living
+	    		Switch item=Heating_GF_Living
+	    		Selection item=SelectLiving mappings=[4="Frost",1="Komfort",3="Nacht",2="Standby"]
+			}
+    		Frame label="Fenster" {
+    			Text item=Window_GF_Living1
+    			Text item=Window_GF_FoodGarden
+    			Text item=Window_GF_FoodSide
+    		}
+    		Frame label="Temperaturverlauf" {
+    			Chart item=Temperature_GF_Living period=8h refresh=30000
+    		}
+    		Frame label="Fenster" {
+    			Image url="http://192.168.178.10:8080/rrdchart.png?items=Window_GF_FoodGarden,Window_GF_FoodSide,Window_GF_Kitchen,Window_GF_Living1&period=8h" refresh=30000
+    		}
+    	}
+    	Group item=GF_Eating {
+    		Frame label="Licht" {
+    			Switch item=Light_GF_EatingCeil
+    			Switch item=Ligth_GF_EatingSpots
+    			Switch item=Ligth_GF_EatingGround
+    			Switch item=Light_GF_Kamin
+    		}
+    		Frame label="Rollladen" {
+				Switch item=Shutter_GF_Living
+				Switch item=Shutter_GF_EatingGarden
+				Switch item=Shutter_GF_EatingNeigh
+			}
+    		Frame label="Heizung" {
+				Text item=Temperature_GF_Living
+	    		Text item=Heating_GF_Living
+			}
+    		Frame label="Fenster" {
+    			Text item=Window_GF_Living1
+    			Text item=Window_GF_FoodGarden
+    			Text item=Window_GF_FoodSide
+    		}
+    	}
+    }
+    Group item=gFF label="Obergeschoss" icon="firstfloor" {
+    	Group item=FF_Office {
+    		Frame label="Licht" {
+    			Switch item=Light_FF_Office_Ceiling mappings=[OFF="Aus"]
+    			Slider item=Light_FF_Office_Ceiling switchSupport
+    			Switch item=Light_FF_Office_Schrank
+    			Switch item=Light_FF_Corridor_Pic
+    		}
+    		Frame label="Steckdosen" {
+    			Switch item=Socket_officeligt
+    			Switch item=Socket_officeiland
+    			Switch item=Socket_mehrzweck
+    		}
+    		Frame label="Rollladen" {
+    			Switch item=Shutter_FF_OfficeSmall
+    			Switch item=Shutter_FF_OfficeLarge
+    			Switch item=Shutter_FF_BiblioLarge
+    			Switch item=Shutter_FF_BiblioSmall
+    		}
+    		Frame label="Heizung" {
+    			Text item=Temperature_FF_Office
+    			Switch item=Heating_FF_Office
+    			Selection item=SelectOffice mappings=[4="Frost",1="Komfort",3="Nacht",2="Standby"]
+    		}
+    		Frame label="Fenster" {
+    			Text item=Window_FF_OfficeSmall
+    			Text item=Window_FF_OfficeLarge
+    			Text item=Window_FF_OpenSpaceG
+    			Text item=Window_FF_OpenSpaceS
+    		}
+    		Frame label="Diagramme" {
+    			Chart item=Temperature_FF_Office period=8h refresh=30000
+    		}
+    	}
+    	Group item=FF_Bath {
+    		Frame label="Licht" {
+    			Switch item=Light_FF_Bath_Wanne
+    			Switch item=Light_FF_Bath_Wand
+    			Switch item=Light_FF_Bath_Mirror
+    			Switch item=Light_FF_Bath_wasch
+    		}
+    		Frame label="Steckdosen" {
+    			Switch item=Socket_bath
+    		}
+    		Frame label="Rollladen" {
+    			Switch item=Shutter_FF_Bath
+    		}
+    		Frame label="Heizung" {
+    			Text item=Temperature_FF_Bath
+    			Text item=Heating_FF_Bath
+    			Selection item=SelectBath mappings=[4="Frost",1="Komfort",3="Nacht",2="Standby"]
+    			Switch item=Heating_FF_BathH
+    		}
+    		Frame label="Fenster" {
+    			Text item=Window_FF_Bath
+    		}
+    		Frame label="Temperaturverlauf" {
+    			Chart item=Temperature_FF_Bath period=8h refresh=30000
+    		}
+    		Frame label="offenes Fenster" {
+    			Chart item=Window_FF_Bath period=8h refresh=30000
+    		}
+    	}
+    	Group item=FF_Bed {
+    		Frame label="Licht" {
+    			Switch item=Light_FF_Bed mappings=[OFF="Aus"]
+    			Slider item=Light_FF_Bed switchSupport
+    		}
+    		Frame label="Steckdosen" {
+    			Switch item=Socket_sidebed
+    			Switch item=Socket_bedroomlight
+    			Switch item=Socket_bedlight
+    			Switch item=Socket_wardrobe
+    		}
+			Frame label="Rollladen" {
+    			Selection item=SceneShutterBedroom mappings=[0="offen", 1="Schlitze", 2="Max", 3="geschlossen"] icon="rollershutter"
+    			Switch item=Shutter_FF_Bed_Big
+    			Switch item=Shutter_FF_Bed_Small
+			}
+			Frame label="Mediacenter" {
+				Text item=xbmc_bed_systemstate
+				Text item=xbmc_bed_playerstate
+				Text item=xbmc_bed_title
+				Text item=xbmc_bed_type
+			}
+    		Frame label="Heizung" {
+    			Text item=Temperature_FF_Bed
+    			Switch item=Heating_FF_Bed
+    			Selection item=SelectBed mappings=[4="Frost",1="Komfort",3="Nacht",2="Standby"]
+    		}
+    		Frame label="Fenster" {
+    			Text item=Window_FF_BedLarge
+    			Text item=Window_FF_BedSmall
+    		}
+    		Frame label="Temperaturverlauf" {
+    			Chart item=Temperature_FF_Bed period=8h refresh=30000
+    		}
+    	}
+    	Group item=FF_Wardrobe label="Ankleide" icon="wardrobe" {
+    		Frame label="Licht" {
+    			Switch item=Light_FF_Wardrobe
+    		}
+    		Frame label="Steckdosen" {
+    			Switch item=Socket_wardrobe
+    		}
+    		Frame label="Rollladen" {
+    			Switch item=Shutter_FF_Wardrobe
+    		}
+    		Frame label="Heizung" {
+    			Text item=Temperature_FF_Bed
+    			Switch item=Heating_FF_Bed
+    		}
+    		Frame label="Fenster" {
+    			Text item=Window_FF_Wardrobe
+    		}
+    	}
+    }
+    Group item=Corridor label="Wegeflächen" icon="corridor" {
+    	Switch item=Light_GF_Corridor_Side mappings=[OFF="Aus"]
+    	Slider item=Light_GF_Corridor_Side switchSupport
+    	Switch item=Light_GF_Corridor_Pic
+    	Switch item=Light_GF_Corridor_Down
+    }
+    Group item=Outdoor label="Aussenanlage" icon="garden" {
+    	Frame label="Licht" {
+    		Switch item=Light_Outdoor_Terasse
+    		Text item=nightfall	
+    	}
+    	Frame label="Steckdosen" {
+    		Switch item=Socket_Outside_House
+    	}
+    	Frame label="Zugänge"
+    }
+    //Group item=Carport label="Carport" icon="garage"
+  }
+
+  Frame label="Wetter" {
+    Group item=Weather label="Wetter" icon="sun_clouds" {
+    	Frame label="Wetterdaten" {
+    		Text item=WeatherTemp_Outside
+    		Text item=WeatherWind_Outside
+    		Text item=WeatherRain
+    		Text item=DayNight
+    	}
+    	Frame label="Licht" {
+    		Text item=WeatherLight_Right
+    		Text item=WeatherLight_Middle
+    		Text item=WeatherLight_Left
+    		Text item=WeatherLight_low
+    	}
+    	Frame label="Wind" {
+    		Chart item=WeatherWind_Outside period=D refresh=30000
+    	}
+    	Frame label="Temperatur" {
+    		Chart item=WeatherTemp_Outside period=D refresh=30000
+    	}
+    	Frame label="Helligkeit" {
+    		Image url="http://192.168.178.10:8080/rrdchart.png?items=WeatherLight_Left,WeatherLight_Middle,WeatherLight_Right&period=8h" refresh=30000
+    	}
+    }
+  }
+
+  Frame label="Astro-Binding" icon="sun" {
+  	Group item=AstroBinding label="AstroBinding" {
+  		Frame label="Sonnenstand" {
+  			Text item=Azimuth
+  			Text item=Elevation
+  		}
+  		Frame label="Sonne/Mond" {
+  			Text item=Sunrise_Time
+  			Text item=Sunset_Time
+  			Text item=Moonrise_Time
+  			Text item=Moonset_Time
+  		}
+  		Frame label="Sonstiges" {
+  			Text item=Zodiac_Sign
+  			Text item=Season_Name
+  		}
+  	}
+  }
+
+  Frame label="Hausstatus" {
+    Group item=Shutters icon="rollershutter"
+    Group item=Temperature {
+    	Frame label="Erdgeschoss" {
+    		Text item=Temperature_GF_Living
+    		Text item=Temperature_GF_Hwr
+    		Text item=Temperature_GF_Bath
+    		Text item=Temperature_GF_Hobby
+    	}
+    	Frame label="Obergeschoss" {
+    		Text item=Temperature_FF_Office
+    		Text item=Temperature_FF_Bath
+    		Text item=Temperature_FF_Bed		
+    	}
+    	Frame label="Temperaturverlauf" {
+    		Chart item=Temperature period=D refresh=30000
+    	}
+    }
+    Group item=Heatings
+    }
+
+}

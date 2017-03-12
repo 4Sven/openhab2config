@@ -1,0 +1,17 @@
+/* Dieses Skript fährt alle Rollläden nach oben! 
+ * Das Bad sowie das Schlafzimmer sind hiervon ausgenommen.
+ * Das Bad, weil jemand duschen und das dann doof wäre.
+ * Das Schlafzimmer, weil dort aktuell Scenen funktionieren! */
+ 
+//sendCommand(Shutter_FF_Bath, UP)
+sendCommand(Shutter_FF_BiblioLarge, UP)
+sendCommand(Shutter_FF_BiblioSmall, UP)
+sendCommand(Shutter_FF_OfficeLarge, UP)
+sendCommand(Shutter_FF_OfficeSmall, UP)
+sendCommand(Shutter_GF_EatingGarden, UP)
+sendCommand(Shutter_GF_EatingNeigh, UP)
+sendCommand(Shutter_GF_Hobby, UP)
+sendCommand(Shutter_GF_Hwr, UP)
+sendCommand(Shutter_GF_Kitchen, UP)
+sendCommand(Shutter_GF_Living, UP)
+sendCommand(Shutter_GF_Toilet, UP)

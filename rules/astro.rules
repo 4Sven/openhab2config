@@ -1,0 +1,50 @@
+rule "Where is the sun?"
+when
+	Item Azimuth changed
+then
+	var int azimuth = (Azimuth.state as DecimalType).intValue
+	var int elevation = (Elevation.state as DecimalType).intValue
+	// Sonne auf der Rückseite
+	if (azimuth>118 && azimuth<268) sendCommand(SunBackwards, ON)
+	else sendCommand(SunBackwards, OFF)
+	// Sonne im Esszimmer
+	if (azimuth>200 && elevation>6) sendCommand(SunEating, ON)
+	else sendCommand(SunEating, OFF)
+	// Sonne im Büro
+	if (azimuth>220 && azimuth<310 && elevation>3) sendCommand(SunBuero, ON)
+	else sendCommand(SunBuero, OFF)
+end
+
+rule "Send Info when SunSidewards changed"
+when
+	Item SunEating changed to ON
+then
+	if(WeatherRain.state==0) {
+		sendTelegram("bot1", "Sonne im Esszimmer")
+	}
+end
+
+rule "Send Info when SunBackward changed"
+when
+	Item SunBackwards changed to ON
+then
+	if(WeatherRain.state==0) {
+		sendTelegram("bot1", "Sonne im Wohnzimmer")
+	}
+end
+
+rule "Send Info when SunBackward changed to OFF"
+when
+	Item SunBackwards changed to OFF
+then
+	if(WeatherRain.state==0) {
+		sendTelegram("bot1", "Wohnzimmer im schatten?")
+	}
+end
+
+rule "30 minutes to sunset"
+when
+	Item SunsetEvent received update ON
+then
+	sendTelegram("bot1", "Gassi gehen? In 30 Minuten geht die Sonne unter!")
+end
