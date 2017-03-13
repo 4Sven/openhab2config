@@ -79,6 +79,7 @@ sitemap better label="Bessere Sitemap"
 				Selection item=kodi_living_control mappings=[PLAY='Play', PAUSE='Pause']
 				Switch    item=kodi_living_stop
 				Text      item=kodi_living_title
+				Text      item=kodi_living_showtitle
 				Text      item=kodi_living_mediatype
 			}
 			Frame label="Rollladen" {
@@ -210,6 +211,7 @@ sitemap better label="Bessere Sitemap"
 				Selection item=kodi_bed_control mappings=[PLAY='Play', PAUSE='Pause']
 				Switch    item=kodi_bed_stop
 				Text      item=kodi_bed_title
+				Text      item=kodi_bed_showtitle
 				Text      item=kodi_bed_mediatype
 			}
     		Frame label="Heizung" {
