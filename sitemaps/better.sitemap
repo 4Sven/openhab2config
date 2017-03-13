@@ -1,4 +1,4 @@
-sitemap better label="Bessere Sitemap"
+sitemap better label="Gebäudesteuerung"
 {
 	Frame label="Gruppenfunktionen" {
 		Group item=gC label="Gruppenfunktionen" icon="none" {
