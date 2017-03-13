@@ -75,10 +75,11 @@ sitemap better label="Bessere Sitemap"
     			Switch item=Socket_Living
 			}
 			Frame label="Mediacenter" {
-				Text item=xbmc_living_systemstate
-				Text item=xbmc_living_playerstate
-				Text item=xbmc_living_title
-				Text item=xbmc_living_type
+				Switch    item=kodi_living_mute
+				Selection item=kodi_living_control mappings=[PLAY='Play', PAUSE='Pause']
+				Switch    item=kodi_living_stop
+				Text      item=kodi_living_title
+				Text      item=kodi_living_mediatype
 			}
 			Frame label="Rollladen" {
 				Switch item=Shutter_GF_Living
@@ -205,10 +206,11 @@ sitemap better label="Bessere Sitemap"
     			Switch item=Shutter_FF_Bed_Small
 			}
 			Frame label="Mediacenter" {
-				Text item=xbmc_bed_systemstate
-				Text item=xbmc_bed_playerstate
-				Text item=xbmc_bed_title
-				Text item=xbmc_bed_type
+				Switch    item=kodi_bed_mute
+				Selection item=kodi_bed_control mappings=[PLAY='Play', PAUSE='Pause']
+				Switch    item=kodi_bed_stop
+				Text      item=kodi_bed_title
+				Text      item=kodi_bed_mediatype
 			}
     		Frame label="Heizung" {
     			Text item=Temperature_FF_Bed

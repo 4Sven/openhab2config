@@ -1,0 +1,13 @@
+/* Mediacenter */
+
+Switch kodi_bed_mute                "Stumm"                 { channel="kodi:kodi:bedRoom:mute" }
+Player kodi_bed_control             "Kontrolle [%s]"        { channel="kodi:kodi:bedRoom:control" }
+Switch kodi_bed_stop                "Stop"                  { channel="kodi:kodi:bedRoom:stop" }
+String kodi_bed_title               "Titel [%s]"            { channel="kodi:kodi:bedRoom:title" }
+String kodi_bed_mediatype           "Mediatype [%s]"        { channel="kodi:kodi:bedRoom:mediatype" }
+
+Switch kodi_living_mute             "Stumm"                 { channel="kodi:kodi:livingRoom:mute" }
+Player kodi_living_control          "Kontrolle [%s]"        { channel="kodi:kodi:livingRoom:control" }
+Switch kodi_living_stop             "Stop"                  { channel="kodi:kodi:livingRoom:stop" }
+String kodi_living_title            "Titel [%s]"            { channel="kodi:kodi:livingRoom:title" }
+String kodi_living_mediatype        "Mediatype [%s]"        { channel="kodi:kodi:livingRoom:mediatype" }
