@@ -265,7 +265,7 @@ sitemap better label="Bessere Sitemap"
     //Group item=Carport label="Carport" icon="garage"
   }
 	Frame label="Überblick & Einstellungen" {
-  		Group item=gC label="Debug Bindings" icon="none" {
+  		Group item=gC label="Debug Bindings" icon="zoom" {
   			Group item=gC label="AstroBinding" icon="none" {
 	  			Frame label="Sonnenstand" {
   					Text item=Azimuth
@@ -283,7 +283,7 @@ sitemap better label="Bessere Sitemap"
   				}
   			}
   		}
-  		Group item=Status icon="none" {
+  		Group item=Status icon="status" {
   			Frame label="im Haus" {
 				Group item=Temperature {
 					Frame label="Erdgeschoss" {
@@ -300,7 +300,7 @@ sitemap better label="Bessere Sitemap"
 				}
 			    Group item=Heatings
 			    Group item=Windows
-				Group item=gC label="Temperaturverlauf" icon="none" {
+				Group item=gC label="Temperaturverlauf" icon="line" {
 					Frame label="Temperaturverlauf" {
 						Chart item=Temperature period=D refresh=30000
     				}
@@ -333,7 +333,7 @@ sitemap better label="Bessere Sitemap"
 				}
 			}
 		}
-		Group item=config label="Einstellungen" icon="none" {
+		Group item=config label="Einstellungen" icon="error" {
 			Switch item=Present label="Anwesenheit" icon="present" mappings=[ON="ja", OFF="nein"]  		
 		}
 	}
