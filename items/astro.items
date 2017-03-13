@@ -1,0 +1,19 @@
+// azimuth and elevation
+Number   Azimuth        "Azimuth [%.2f]"     { channel="astro:sun:home:position#azimuth" }
+Number   Elevation      "Elevation [%.2f]"   { channel="astro:sun:home:position#elevation" }
+
+// shows the sunrise
+DateTime Sunrise_Time  "Sonnenaufgang [%1$tH:%1$tM]"  { channel="astro:sun:home:rise#start" }
+
+// shows the sunset
+DateTime Sunset_Time   "Sonnenuntergang [%1$tH:%1$tM]"   { channel="astro:sun:home:set#end" }
+
+// zodiac
+String   Zodiac_Sign    "Tierkreiszeichen [MAP(zodiac.map):%s]"           { channel="astro:sun:home:zodiac#sign" }
+
+// season
+String Season_Name      "Jahreszeit [MAP(season.map):%s]"                 { channel="astro:sun:home:season#name" }
+
+// rise, set
+DateTime Moonrise_Time   "Mondaufgang [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"    { channel="astro:moon:home:rise#start" }
+DateTime Moonset_Time    "Monduntergang [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"  { channel="astro:moon:home:set#end" }

@@ -1,0 +1,27 @@
+Group All Group gGF (All) 
+
+Group gFF (All) 
+Group gC (All) 
+Group Outdoor (All) 
+Group Shutters (All) 
+Group Weather (All) 
+Group Status (All)
+
+Group GF_Living         "Wohnzimmer"            <sofa>         	(gGF)
+Group GF_Kitchen        "Küche"                 <kitchen>       (gGF)
+Group GF_Hobby          "Hobby"                 <smiley>        (gGF)
+Group GF_Hwr            "Wirtschaftsraum"       <smartheater>   (gGF)
+Group GF_Toilet         "Toilette"              <bath>          (gGF)
+Group Corridor          "Flur"                  <corridor>      (gGF)
+Group GF_Eating			"Esszimmer"				<none> 			(gGF)
+
+Group FF_Bath           "Bad"                   <bath>          (gFF)
+Group FF_Office         "Büro"             		<office>        (gFF)
+Group FF_Wardrobe       "Ankleide"              <wardrobe>      (gFF)
+Group FF_Bed            "Schlafzimmer"          <bedroom>       (gFF)
+Group FF_Corridor       "Flur"                  <corridor>      (gFF)
+
+/* active groups */
+Group:Number:AVG                Temperature     "Temperatur [%.1f °C]"     <temperature>   (Status)
+Group:Contact:OR(OPEN, CLOSED)  Windows         "offene Fenster [(%d)]"    <contact>       (Status)
+Group:Switch:OR(ON, OFF)        Heatings        "aktive Heizkreise [(%d)]" <heating>       (Status)

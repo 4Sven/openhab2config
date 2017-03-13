@@ -1,7 +1,7 @@
-sitemap better label="Hauptmenü"
+sitemap better label="Bessere Sitemap"
 {
 	Frame label="Gruppenfunktionen" {
-		Group label="Gruppenfunktionen" icon="none" {
+		Group item=gC label="Gruppenfunktionen" icon="none" {
 			Switch item=Light_any icon="house-off" mappings=[OFF="AUS"]
 			Switch item=allShutters label="alle Rollläden" icon="rollershutter" mappings=[ON="auf",OFF="ab"]
 		    Group item=Shutters icon="rollershutter"
@@ -261,8 +261,8 @@ sitemap better label="Hauptmenü"
     //Group item=Carport label="Carport" icon="garage"
   }
 	Frame label="Überblick & Einstellungen" {
-  		Group label="Debug Bindings" icon="none" {
-  			Group label="AstroBinding" icon="none" {
+  		Group item=gC label="Debug Bindings" icon="none" {
+  			Group item=gC label="AstroBinding" icon="none" {
 	  			Frame label="Sonnenstand" {
   					Text item=Azimuth
   					Text item=Elevation
@@ -296,7 +296,7 @@ sitemap better label="Hauptmenü"
 				}
 			    Group item=Heatings
 			    Group item=Windows
-				Group label="Temperaturverlauf" icon="none" {
+				Group item=gC label="Temperaturverlauf" icon="none" {
 					Frame label="Temperaturverlauf" {
 						Chart item=Temperature period=D refresh=30000
     				}
@@ -316,7 +316,7 @@ sitemap better label="Hauptmenü"
 						Text item=WeatherLight_low
 					}
 				}
-				Group label="Wetterdiagramme" icon="sun" {
+				Group item=weather label="Wetterdiagramme" icon="sun" {
 					Frame label="Wind" {
 						Chart item=WeatherWind_Outside period=D refresh=30000
 					}
@@ -329,7 +329,7 @@ sitemap better label="Hauptmenü"
 				}
 			}
 		}
-		Group label="Einstellungen" icon="none" {
+		Group item=config label="Einstellungen" icon="none" {
 			Switch item=Present label="Anwesenheit" icon="present" mappings=[ON="ja", OFF="nein"]  		
 		}
 	}
