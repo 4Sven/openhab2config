@@ -22,7 +22,7 @@ Switch Light_GF_Hwr						"Deckenlicht"			(Lights) {knx="1/0/4+9/0/4"}
 Switch Light_GF_Toilet					"Gäste WC"				(Lights) {knx="1/0/8+9/0/8"}
 Switch Light_GF_Hobby					"Hobbyraum"				(Lights) {knx="1/0/6+9/0/6"}
 
-Dimmer Light_FF_Office_Ceiling          "Decke"                 (FF_Office, Lights) {knx="1/1/4, 10/1/4, 11/1/4"}
+Dimmer Light_FF_Office_Ceiling          "Decke"                 (FF_Office, Lights) {knx="1/1/4+9/1/4, 10/1/4, 11/1/4"}
 Switch Light_FF_Office_Schrank          "Schrank"               (FF_Office, Lights) {knx="1/1/22+9/1/22"}
 Switch Light_FF_Office_Ceiling2			"Decke2"				(FF_Office, Lights) {knx="1/1/7+9/1/7"}
 Dimmer Light_FF_Corridor_Pic			"Büro Bild"				(Corridor, Lights) {knx="<1/1/18, 10/1/18, 11/1/18"}
