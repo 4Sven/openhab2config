@@ -54,25 +54,6 @@ Switch Heating_FF_Bath			"Bad"			<heating>		(FF_Bath, Heatings) {knx="0/1/6"}
 Switch Heating_FF_BathH			"Heizkörper"	<heating>		(FF_Bath, Heatings) {knx="0/1/19"}
 Switch Heating_FF_Bed			"Schlafzimmer"	<heating>		(FF_Bed, Heatings) {knx="0/1/13"}
 
-
-/* Rollershutters */
-Rollershutter	Shutter_GF_Living			"Wohnzimmer"	(Shutters) {knx="2/0/6, 2/0/7"}
-Rollershutter	Shutter_GF_EatingGarden		"Esszimmer"		(Shutters) {knx="2/0/8, 2/0/9"}
-Rollershutter	Shutter_GF_EatingNeigh		"Esszimmer (Seite)"	(Shutters) {knx="2/0/10, 2/0/11"}
-Rollershutter	Shutter_GF_Kitchen			"Küche"			(Shutters) {knx="2/0/12, 2/0/13"}
-Rollershutter	Shutter_GF_Hobby			"Hobby"			(Shutters) {knx="2/0/4, 2/0/5"}
-Rollershutter	Shutter_GF_Hwr				"Wirtschaftsraum" (Shutters) {knx="2/0/0, 2/0/1"}
-Rollershutter	Shutter_GF_Toilet			"WC"			(Shutters) {knx="2/0/2, 2/0/3"}
-
-Rollershutter   Shutter_FF_OfficeSmall          "Büro klein"    (FF_Office, Shutters)   {knx="2/1/2, 2/1/3"}
-Rollershutter   Shutter_FF_OfficeLarge          "Büro groß"     (FF_Office, Shutters)   {knx="2/1/4, 2/1/5"}
-Rollershutter	Shutter_FF_BiblioLarge			"Lesezimmer klein" (Shutters) {knx="2/1/8, 2/1/9"}
-Rollershutter	Shutter_FF_BiblioSmall			"Lesezimmer groß" (Shutters) {knx="2/1/6, 2/1/7"}
-Rollershutter	Shutter_FF_Bath					"Bad"			(FF_Bath, Shutters) {knx="2/1/0, 2/1/1"}
-Rollershutter	Shutter_FF_Wardrobe				"Ankleide"		(FF_Wardrobe, Shutters) {knx="2/1/10, 2/1/11"}
-Rollershutter	Shutter_FF_Bed_Small			"Schlafzimmer klein" (FF_Bed_Small, Shutters) {knx="2/1/12, 2/1/13"}
-Rollershutter	Shutter_FF_Bed_Big				"Schlafzimmer groß" (FF_Bed_Big, Shutters) {knx="2/1/14, 2/1/15"}
-
 /* Helligkeit */
 Number Lightness_GF_Hwr			"HWR [%.0f lux]"					<lightness> (GF_Hwr) {knx="1/5/3"}
 Number Lightness_GF_Corridor	"Flur unten [%.0f lux]"				<lightness> (Corridor) {knx="1/5/1"}
@@ -81,15 +62,15 @@ Number Lightness_GF_Toilet		"Toilette [%.0f lux]"				<lightness> (GF_Toilet) {kn
 Number Lightness_FF_Bath		"Bad [%0.f lux]"					<lightness> (FF_Bath) {knx="1/5/0"}
 
 /* Indoor Temperatures */
-Number Temperature_FF_Office    "Arbeitszimmer [%.1f &deg;C]"       <temperature>   (FF_Office, Temperature, gInitializeZero) { knx = "0/1/1" }
-Number Temperature_FF_Bath      "Bad [%.1f &deg;C]"                 <temperature>   (FF_Bath, Temperature, gInitializeZero)   { knx = "0/1/7" }
-Number Temperature_FF_Bed       "Schlafzimmer [%.1f &deg;C]"        <temperature>   (FF_Bed, Temperature, gInitializeZero)    { knx = "0/1/14" }
+Number Temperature_FF_Office    "Arbeitszimmer [%.1f °C]"       <temperature>   (FF_Office, Temperature, gInitializeZero) { knx = "0/1/1" }
+Number Temperature_FF_Bath      "Bad [%.1f °C]"                 <temperature>   (FF_Bath, Temperature, gInitializeZero)   { knx = "0/1/7" }
+Number Temperature_FF_Bed       "Schlafzimmer [%.1f °C]"        <temperature>   (FF_Bed, Temperature, gInitializeZero)    { knx = "0/1/14" }
 
-Number Temperature_GF_Living    "Wohnbereich [%.1f &deg;C]"         <temperature>   (GF_Living, Temperature, gInitializeZero)    { knx = "0/0/16" }
-Number Temperature_GF_Hwr       "Wirtschaftsraum [%.1f &deg;C]"     <temperature>   (GF_Hwr, Temperature, gInitializeZero)       { knx = "0/0/4" }
-Number Temperature_GF_Bath      "WC [%.1f &deg;C]"                  <temperature>   (GF_Toilet, Temperature, gInitializeZero)    { knx = "0/0/9" }
-Number Temperature_GF_Kitchen   "K&uuml;che [%.1f &deg;C]"          <temperature>   (GF_Kitchen, Temperature, gInitializeZero)    { knx = "0/0/19" }
-Number Temperature_GF_Hobby     "Hobby [%.1f &deg;C]"               <temperature>   (GF_Hobby, Temperature, gInitializeZero)     { knx = "0/0/32" }
+Number Temperature_GF_Living    "Wohnbereich [%.1f °C]"         <temperature>   (GF_Living, Temperature, gInitializeZero)    { knx = "0/0/16" }
+Number Temperature_GF_Hwr       "Wirtschaftsraum [%.1f °C]"     <temperature>   (GF_Hwr, Temperature, gInitializeZero)       { knx = "0/0/4" }
+Number Temperature_GF_Bath      "WC [%.1f °C]"                  <temperature>   (GF_Toilet, Temperature, gInitializeZero)    { knx = "0/0/9" }
+Number Temperature_GF_Kitchen   "K&uuml;che [%.1f °C]"          <temperature>   (GF_Kitchen, Temperature, gInitializeZero)    { knx = "0/0/19" }
+Number Temperature_GF_Hobby     "Hobby [%.1f °C]"               <temperature>   (GF_Hobby, Temperature, gInitializeZero)     { knx = "0/0/32" }
 
 /* Windows */
 Contact Window_FF_OfficeSmall   "Office klein [MAP(de.map):%s]"         (FF_Office, Windows, gInitializeClosed) {knx="<8/1/0"}
@@ -110,7 +91,7 @@ Contact Window_GF_FoodGarden   	"Esszimmer hinten [MAP(de.map):%s]"     (GF_Livi
 Contact Window_GF_FoodSide   	"Esszimmer seite [MAP(de.map):%s]"      (GF_Living, Windows, gInitializeClosed) {knx="<8/0/6"}
 
 /* Weather */
-Number  WeatherTemp_Outside        "Au&szlig;entemperatur [%.1f &deg;C]"     	(Weather) {knx="<6/1/0"}
+Number  WeatherTemp_Outside        "Au&szlig;entemperatur [%.1f °C]"     	(Weather) {knx="<6/1/0"}
 Number  WeatherWind_Outside        "Windgeschwindigkeit [%.1f m/s]"            (Weather) {knx="<6/1/1"}
 Number  WeatherLight_Right         "Helligkeit rechts [%.0f lux]"              (Weather) {knx="<6/1/2"}
 Number  WeatherLight_Middle        "Helligkeit mitte [%.0f lux]"               (Weather) {knx="<6/1/3"}
