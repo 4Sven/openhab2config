@@ -126,7 +126,7 @@ sitemap default label="Hauptmenü"
     Group item=gFF label="Obergeschoss" icon="firstfloor" {
     	Group item=FF_Office {
     		Frame label="Licht" {
-    			Switch item=Light_FF_Office_Ceiling mappings=[OFF="Aus"]
+    			Switch item=Light_FF_Office_Ceiling mappings=[0="Aus"]
     			Slider item=Light_FF_Office_Ceiling switchSupport
     			Switch item=Light_FF_Office_Schrank
     			Switch item=Light_FF_Corridor_Pic
