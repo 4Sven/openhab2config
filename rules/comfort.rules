@@ -22,7 +22,7 @@ when
 then
 	logInfo("Info", "Badfenster wurde geöffnet!")
 	if(Heating_FF_BathH.state==ON) {
-		sendCommand(Heating_FF_BathH, OFF)
+		Heating_FF_BathH.sendCommand(OFF)
 		logInfo("Info", "Heizung wurde abgedreht!")
 	}
 end
@@ -32,7 +32,7 @@ rule "Rollladen hochfahren wenn Fenster geöffnet wird"
 when
 	Item Window_FF_OpenSpaceG changed from CLOSED to OPEN
 then
-	sendCommand(Shutter_FF_BiblioSmall, UP)
+	Shutter_FF_BiblioLarge.sendCommand(UP)
 	timer = createTimer(now.plusSeconds(600)) [|
 		sendTelegram("bot1", "Hast du das Fenster geschlossen?")
 	]
