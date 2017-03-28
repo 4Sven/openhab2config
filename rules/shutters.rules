@@ -1,0 +1,50 @@
+var Timer timer
+
+rule "alle Rollläden hochfahren"
+when
+	Item allShutters received command ON
+then
+	callScript("ShuttersUp")
+end
+
+
+rule "alle Rollläden runterfahren"
+when
+	Item allShutters received command OFF
+then
+	callScript("ShuttersDown")
+end
+
+/**
+ * Erdgeschoss
+ **/
+
+/** 
+ * Obergeschoss
+ **/
+ 
+// Bad
+rule "Bad: Heizkörper ausschalten wenn Fenster geöffnet wird"
+when
+	Item Window_FF_Bath changed from CLOSED to OPEN
+then
+	logInfo("Info", "Badfenster wurde geöffnet!")
+	if(Heating_FF_BathH.state==ON) {
+		Heating_FF_BathH.sendCommand(OFF)
+		logInfo("Info", "Heizung wurde abgedreht!")
+	}
+end
+
+
+rule "Lesezimmer: Rollladen hochfahren wenn Fenster geöffnet wird"
+when
+	Item Window_FF_OpenSpaceG changed from CLOSED to OPEN
+then
+	Shutter_FF_BiblioLarge.sendCommand(UP)
+	timer = createTimer(now.plusSeconds(600)) [|
+		sendTelegram("bot1", "Hast du das Fenster geschlossen?")
+	]
+end
+
+
+

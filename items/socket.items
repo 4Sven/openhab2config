@@ -1,18 +1,18 @@
 /* Sockets */
-Switch Socket_Outside_House		"Steckdosen am Haus"	<poweroutlet>		(Outdoor) {knx="7/2/0+12/2/0"}
-Switch Socket_Hwr				"Zirkulationspumpe"		<poweroutlet>		(GF_Hwr) {knx="7/0/2+12/0/2"}
+Switch Socket_Outside_House		"Steckdosen am Haus"	<poweroutlet>		(Outdoor) 		["Switchable"]	{knx="7/2/0+12/2/0"}
+Switch Socket_Hwr				"Zirkulationspumpe"		<poweroutlet>		(GF_Hwr) 		["Switchable"]	{knx="7/0/2+12/0/2"}
 
-Switch Socket_GF_Living			"TV Ecke"				<poweroutlet>		(GF_Living) {knx="7/0/1+12/0/1"}
-Switch Socket_floor_room		"Harry Potter"			<poweroutlet>		(Corridor) {knx="7/0/3+12/0/3"}
-Switch Socket_floor				"Flur"					<poweroutlet>		(Corridor) {knx="7/0/4+12/0/4"}
-Switch Socket_Living			"Couch (Ecke)"			<poweroutlet>		(GF_Living) {knx="7/0/5+12/0/5"}
-Switch Socket_Kitchen			"Deckenlüfter"			<poweroutlet>		(GF_Kitchen) {knx="7/0/0"}
+Switch Socket_GF_Living			"Fernsehr"				<poweroutlet>		(GF_Living) 	["Switchable"]	{knx="7/0/1+12/0/1"}
+Switch Socket_floor_room		"Harry Potter"			<poweroutlet>		(Corridor) 		["Switchable"]	{knx="7/0/3+12/0/3"}
+Switch Socket_floor				"Flur"					<poweroutlet>		(Corridor) 		["Switchable"]	{knx="7/0/4+12/0/4"}
+Switch Socket_Living			"Couch (Ecke)"			<poweroutlet>		(GF_Living) 	["Switchable"]	{knx="7/0/5+12/0/5"}
+Switch Socket_Kitchen			"Deckenlüfter"			<poweroutlet>		(GF_Kitchen) 	["Switchable"]	{knx="7/0/0"}
 
-Switch Socket_bath				"Bad"					<poweroutlet>		(FF_Bath) {knx="7/1/0+<12/1/0"}
-Switch Socket_sidebed			"Nachttisch"			<poweroutlet>		(FF_Bed) {knx="7/1/2+<12/1/2"}
-Switch Socket_bedroomlight		"Stehlampe"				<poweroutlet>		(FF_Bed) {knx="7/1/4+<12/1/4"}
-Switch Socket_bedlight			"Bett Sockellicht"		<poweroutlet>		(FF_Bed) {knx="7/1/6+<12/1/6"}
-Switch Socket_mehrzweck			"Mehrzweck"				<poweroutlet>		(FF_Office) {knx="7/1/8+<12/1/8"}
-Switch Socket_wardrobe			"Ankleide"				<poweroutlet>		(FF_Wardrobe) {knx="7/1/10+<12/1/10"}
-Switch Socket_officeligt		"Tischlampe"			<poweroutlet>		(FF_Office) {knx="7/1/12+<12/1/12"}
-Switch Socket_officeiland		"Lichtinsel"			<poweroutlet>		(FF_Office) {knx="7/1/14+<12/1/14"}
+Switch Socket_bath				"Bad"					<poweroutlet>		(FF_Bath) 		["Switchable"]	{knx="7/1/0+<12/1/0"}
+Switch Socket_sidebed			"Nachttisch"			<poweroutlet>		(FF_Bed) 		["Switchable"]	{knx="7/1/2+<12/1/2"}
+Switch Socket_bedroomlight		"Stehlampe"				<poweroutlet>		(FF_Bed) 		["Switchable"]	{knx="7/1/4+<12/1/4"}
+Switch Socket_bedlight			"Bett Sockellicht"		<poweroutlet>		(FF_Bed) 		["Switchable"]	{knx="7/1/6+<12/1/6"}
+Switch Socket_mehrzweck			"Mehrzweck"				<poweroutlet>		(FF_Office) 	["Switchable"]	{knx="7/1/8+<12/1/8"}
+Switch Socket_wardrobe			"Ankleide"				<poweroutlet>		(FF_Wardrobe) 	["Switchable"]	{knx="7/1/10+<12/1/10"}
+Switch Socket_officeligt		"Tischlampe"			<poweroutlet>		(FF_Office) 	["Switchable"]	{knx="7/1/12+<12/1/12"}
+Switch Socket_officeiland		"Lichtinsel"			<poweroutlet>		(FF_Office) 	["Switchable"]	{knx="7/1/14+<12/1/14"}
