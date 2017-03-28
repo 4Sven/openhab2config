@@ -2,7 +2,7 @@
 Switch Socket_Outside_House		"Steckdosen am Haus"	<poweroutlet>		(Outdoor) 		["Switchable"]	{knx="7/2/0+12/2/0"}
 Switch Socket_Hwr				"Zirkulationspumpe"		<poweroutlet>		(GF_Hwr) 		["Switchable"]	{knx="7/0/2+12/0/2"}
 
-Switch Socket_GF_Living			"Fernsehr"				<poweroutlet>		(GF_Living) 	["Switchable"]	{knx="7/0/1+12/0/1"}
+Switch Socket_GF_Living			"Fernseher"				<poweroutlet>		(GF_Living) 	["Switchable"]	{knx="7/0/1+12/0/1"}
 Switch Socket_floor_room		"Harry Potter"			<poweroutlet>		(Corridor) 		["Switchable"]	{knx="7/0/3+12/0/3"}
 Switch Socket_floor				"Flur"					<poweroutlet>		(Corridor) 		["Switchable"]	{knx="7/0/4+12/0/4"}
 Switch Socket_Living			"Couch (Ecke)"			<poweroutlet>		(GF_Living) 	["Switchable"]	{knx="7/0/5+12/0/5"}
