@@ -46,5 +46,14 @@ then
 	]
 end
 
+rule "Badezimmer: Rollladen hochfahren wenn Fenster geöffnet wird"
+when
+	Item Window_FF_Bath changed from CLOSED to OPEN
+then
+	Shutter_FF_Bath.sendCommand(UP)
+	timer = createTimer(now.plusSeconds(600)) [|
+		sendTelegram("bot1", "Hast du das Fenster geschlossen?")
+	]
+end
 
 
